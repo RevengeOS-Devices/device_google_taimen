@@ -28,6 +28,12 @@ BOARD_AVB_ENABLE := true
 # sepolicy
 BOARD_VENDOR_SEPOLICY_DIRS += device/google/taimen/sepolicy
 
+DEVICE_PATH := device/google/taimen
+
+# Vendor init
+TARGET_INIT_VENDOR_LIB := //$(DEVICE_PATH):libinit_taimen
+TARGET_RECOVERY_DEVICE_MODULES := libinit_taimen
+
 # Kernel modules
 #ifeq (,$(filter-out taimen_kasan, $(TARGET_PRODUCT)))
 # if TARGET_PRODUCT == taimen_kasan
