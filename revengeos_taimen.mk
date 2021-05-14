@@ -1,6 +1,10 @@
 # Inherit some common RevengeOS stuff
 $(call inherit-product, vendor/revengeos/config/common.mk)
 
+# Inherit from the common Open Source product configuration
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
+
 # Inherit device configuration
 $(call inherit-product, device/google/taimen/aosp_taimen.mk)
 
@@ -11,7 +15,6 @@ PRODUCT_BRAND := google
 PRODUCT_MODEL := Pixel 2 XL
 PRODUCT_MANUFACTURER := Google
 PRODUCT_RELEASE_NAME := taimen
-PRODUCT_RESTRICT_VENDOR_FILES := false
 
 # Override Fingerprint for Safetynet passing
 PRODUCT_BUILD_PROP_OVERRIDES += \
