@@ -26,3 +26,5 @@ BUILD_FINGERPRINT := google/redfin/redfin:11/RQ2A.210505.003/7255357:user/releas
 # RevengeOS maintainer
 REVENGEOS_BUILDTYPE := UNOFFICIAL
 TARGET_BOOT_ANIMATION_RES := 1440
+
+$(call inherit-product-if-exists, vendor/google/taimen/taimen-vendor.mk)
